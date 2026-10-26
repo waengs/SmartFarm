@@ -1,0 +1,23 @@
+{
+  "name": "smartfarm-crop-dashboard",
+  "version": "1.0.0",
+  "description": "SmartFarm Crop IoT Dashboard - Full-Stack React + Node/Express + SQLite Application",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend run dev",
+    "test:backend": "npm --prefix backend test",
+    "test:frontend": "npm --prefix frontend test",
+    "test": "npm run test:backend && npm run test:frontend",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "keywords": [
+    "smartfarm",
+    "iot",
+    "react",
+    "express",
+    "sqlite"
+  ],
+  "author": "SmartFarm Development Team",
+  "license": "ISC"
+}
