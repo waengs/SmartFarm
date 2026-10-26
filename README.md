@@ -242,19 +242,3 @@ Return only the JSON array. Do not use Markdown or explanation.
 
 - **Static Single-Node Sensor Storage:** Sensor data is simulated from a single static local file (`backend/data/sensor-readings.json`). In a commercial smart farming production environment, sensor telemetry arrives continuously through streaming protocols (such as MQTT or WebSockets) from physical edge nodes. Future revisions would replace static file reading with an append-only time-series data store and WebSocket subscriptions for live dashboard push updates.
 
----
-
-## 11. Acceptance Checklist Summary
-
-- [x] Initial load loads seeded cards (Tomato, Lettuce, Wheat) and leaves Maize available.
-- [x] Create Maize works via UI modal and persists to SQLite.
-- [x] Duplicate crop card is rejected with `HTTP 409` and clear UI error.
-- [x] Editing location/targets updates SQLite and recalculates card instantly.
-- [x] Editing `crop_name` is blocked on frontend (read-only) and rejected with `HTTP 400` on backend.
-- [x] Deleting a card removes SQLite record without altering the sensor JSON file.
-- [x] Greatest timestamp is selected regardless of array position.
-- [x] Faulty Maize sensor produces `Sensor Problem` and escalates farm status to `Critical`.
-- [x] Historical out-of-range Wheat reading produces `Invalid Data` with the invalid field highlighted in Sensor History.
-- [x] Boundary rules: moisture equal to min/max is Healthy; 35 °C is not high; 5 mm adds Rain detected.
-- [x] Failed refresh retains last successful readings and lastRefresh timestamp.
-- [x] Empty cards state shows `No Crops` and clean empty state guidance.
